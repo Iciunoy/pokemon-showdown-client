@@ -143,7 +143,7 @@ var ReplayPanel = Panels.StaticPanel.extend({
 			$logFrame: this.$('.battle-log'),
 			log: log.split('\n'),
 			isReplay: true,
-			paused: true
+			paused: false
 		})
 
 		this.$('.urlbox').css('margin-right', 120).before('<a class="button replayDownloadButton" style="float:right;margin-top:7px;margin-right:7px" href="#"><i class="fa fa-download"></i> Download</a>');

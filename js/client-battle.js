@@ -50,6 +50,12 @@
 			this.$chat = this.$chatFrame.find('.inner');
 
 			this.$options = this.battle.scene.$options.html('<div style="padding-top: 3px; padding-right: 3px; text-align: right"><button class="icon button" name="openBattleOptions" title="Options">Battle Options</button></div>');
+			this.instantReplay();
+			this.tooltips.hideTooltip();
+			this.request = null;
+			this.battlePaused = false;
+			this.battle.reset();
+			this.battle.play();
 		},
 		events: {
 			'click .replayDownloadButton': 'clickReplayDownloadButton',
@@ -132,6 +138,12 @@
 			if (this.battle.ended) this.battleEnded = true;
 			this.updateLayout();
 			this.updateControls();
+			this.tooltips.hideTooltip();
+			this.request = null;
+			this.battlePaused = false;
+			this.battle.reset();
+			this.battle.play();
+			this.instantReplay();
 		},
 		add: function (data) {
 			if (!data) return;
